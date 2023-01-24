@@ -1,0 +1,115 @@
+.story {
+  margin-bottom: 11rem;
+  &__list {
+    padding-top: 4.6rem;
+    @include flexbox(stretch, space-between);
+    gap: 3.2rem;
+    width: 100%;
+  }
+
+  &__item {
+    @include flexbox(flex-start, flex-start, column);
+    gap: 1.6rem;
+    width: 33.33%;
+  }
+
+  &__media {
+    position: relative;
+    width: 100%;
+  }
+
+  &__image {
+    @include size(100%, 24rem);
+    object-fit: cover;
+  }
+
+  &__date {
+    @include flexbox(center, center, column);
+    gap: 0.6rem;
+    padding: 1.6rem;
+    background-color: $clr-secondary-turquoise;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    left: -1rem;
+    bottom: 1rem;
+  }
+
+  &__number {
+    font-family: $ff-body;
+    font-size: $fs-300;
+    font-weight: 700;
+  }
+
+  &__month {
+    font-style: italic;
+  }
+
+  &__header {
+    @include flexbox(stretch, space-between, column);
+    padding-bottom: 1.6rem;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      @include size(100%, 1px);
+      background-color: $clr-accent-grey-300;
+      bottom: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $clr-heading;
+    margin-bottom: 1.6rem;
+    font-size: $fs-200;
+    line-height: 1.4;
+    height: 4.5rem;
+    @include textClamp(2);
+  }
+
+  &__desc {
+    display: block;
+    font-family: $ff-body;
+    color: $clr-body;
+    line-height: 1.4;
+  }
+
+  &__data {
+    @include flexbox;
+    gap: 1.6rem;
+    margin-top: 1.6rem;
+  }
+
+  &__data-item {
+    @include flexbox;
+    gap: 0.4rem;
+  }
+
+  &__icon {
+    color: $clr-secondary-turquoise;
+  }
+
+  &__text {
+    color: $clr-body;
+    font-style: italic;
+  }
+
+  @include maxWidth(767px) {
+    &__list {
+      display: block;
+    }
+
+    &__item {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 3.2rem;
+      }
+    }
+  }
+}

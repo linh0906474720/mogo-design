@@ -1,0 +1,55 @@
+.work {
+  padding: 10rem 0;
+
+  &__gallary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 39rem);
+    grid-template-areas:
+      "i1 i2 i3 i4"
+      "i5 i6 i3 i7";
+  }
+
+  &__item {
+    @include size(100%);
+  }
+
+  &__image {
+    @include size(100%);
+    object-fit: cover;
+  }
+
+  &__item:nth-child(1) {
+    grid-area: i1;
+  }
+  &__item:nth-child(2) {
+    grid-area: i2;
+  }
+  &__item:nth-child(3) {
+    grid-area: i3;
+  }
+  &__item:nth-child(4) {
+    grid-area: i4;
+  }
+  &__item:nth-child(5) {
+    grid-area: i5;
+  }
+  &__item:nth-child(6) {
+    grid-area: i6;
+  }
+  &__item:nth-child(7) {
+    grid-area: i7;
+  }
+
+  @include maxWidth(1023px) {
+    &__gallary {
+      grid-template-rows: repeat(2, 24rem);
+    }
+  }
+
+  @include maxWidth(767px) {
+    &__gallary {
+      display: block;
+    }
+  }
+}

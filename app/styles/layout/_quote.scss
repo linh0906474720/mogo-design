@@ -1,0 +1,74 @@
+.quote {
+  padding: 10rem 0;
+  background-color: $clr-accent-grey-100;
+  &__container {
+    @include flexbox(center, space-between);
+  }
+
+  &__arrow-left,
+  &__arrow-right {
+    font-size: 2.4rem;
+    color: $clr-accent-grey-300;
+    cursor: pointer;
+    padding: 2rem;
+  }
+
+  &__content {
+    @include flexbox(center, flex-start, row);
+    gap: 3.2rem;
+    padding: 0 2.4rem;
+  }
+
+  &__icon {
+    @include size(15rem);
+    flex-shrink: 0;
+    @include flexbox(center, center);
+  }
+
+  &__info {
+    max-width: 77.7rem;
+    @include flexbox(flex-start, flex-start, column);
+    gap: 2.6rem;
+  }
+
+  &__desc {
+    font-family: $ff-body;
+    line-height: 1.4;
+    color: $clr-body;
+    font-size: $fs-400;
+    font-style: italic;
+    @include textClamp(3);
+  }
+
+  &__author {
+    font-family: $ff-subtitle;
+    font-size: $fs-400;
+    padding-left: 8rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      @include size(7rem, 0.3rem);
+      background-color: $clr-primary;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0%, -50%);
+    }
+  }
+
+  @include maxWidth(767px) {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__arrow-left,
+    &__arrow-right {
+      display: none;
+    }
+
+    &__info {
+      align-items: center;
+    }
+  }
+}

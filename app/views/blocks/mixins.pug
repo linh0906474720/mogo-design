@@ -1,0 +1,77 @@
+mixin menuLink(title, href)
+	li.header-menu__item
+		a.header-menu__link(href= href)= title
+
+mixin bottomContent(number, text)
+	.header-bottom__item
+		span.header-bottom__number= number
+		span.header-bottom__text= text
+
+mixin blogBox(caption, header, desc)
+	.block-box
+		h4.block-box__caption= 	caption
+		h3.block-box__header= 	header
+		if desc
+			p.block-box__desc= desc
+
+mixin aboutItem(src, icon, title)
+	.about__item
+		img.about__image(src=src)
+		.about__content
+			i.about__icon(class= icon)
+			span.about__title= title
+
+mixin numberItem(number, desc)
+	.number__item 
+		h4.number__stat= number
+		span.number__desc= desc
+
+mixin serviceItem(icon, title, desc)
+	.service__item 
+		i.service__icon(class= icon)
+		.service__content
+			h4.service__title= title 
+			span.service__desc= desc
+
+mixin wedoItem(icon, title, chevron, desc, active)
+	.wedo-item(class= active)
+		.wedo-item__header
+			i.wedo-item__icon(class= icon)
+			span.wedo-item__title= title
+			i.wedo-item__chevron(class= chevron)
+		.wedo-item__content
+			span.wedo-item__text= desc
+
+mixin teamItem(src, title, desc, icon1, icon2, icon3, icon4)
+	.team__item 
+		img.team__image(src= src)
+		h4.team__title= title 
+		span.team__desc= desc
+		.team__content
+			i.team__icon(class= icon1)
+			i.team__icon(class= icon2)
+			i.team__icon(class= icon3)
+			i.team__icon(class= icon4)
+
+mixin workItem(src)
+	.work__item 
+		img.work__image(src= src)
+
+mixin storyItem(src, number, month, title, desc, class1, text1, class2, text2)
+	.story__item
+		.story__media
+			img.story__image(src= src)
+			.story__date 
+				span.story__number= number
+				span.story__month= month
+		.story__content
+			.story__header
+				h4.story__title= title
+				span.story__desc= desc
+			.story__data
+				.story__data-item
+					i.story__icon(class= class1)
+					span.story__text= text1
+				.story__data-item
+					i.story__icon(class= class2)
+					span.story__text= text2

@@ -1,0 +1,83 @@
+.service {
+  margin-top: 11rem;
+  margin-bottom: 11rem;
+
+  &__list {
+    @include flexbox(flex-start, flex-start, column);
+    gap: 5rem;
+    margin-top: 6.8rem;
+  }
+
+  &__row {
+    @include flexbox(stretch);
+
+    &:first-child {
+      padding-bottom: 5rem;
+      border-bottom: 1px solid $clr-accent-grey-300;
+    }
+  }
+
+  &__item {
+    @include flexbox(flex-start, flex-start, row);
+    gap: 2.6rem;
+    width: 33.33%;
+    margin-left: 2.6rem;
+  }
+
+  &__icon {
+    font-size: 3.2rem;
+    color: $clr-secondary-turquoise;
+  }
+
+  &__content {
+    @include flexbox(flex-start, space-between, column);
+    gap: 1.4rem;
+    line-height: 1.4;
+    height: 100%;
+  }
+
+  &__title {
+    color: $clr-heading;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  &__desc {
+    color: $clr-body;
+  }
+
+  @include maxWidth(767px) {
+  }
+
+  @include maxWidth(1023px) {
+    &__list {
+      @include flexbox(flex-start, space-between, column);
+      gap: 3.2rem;
+    }
+
+    &__row {
+      @include flexbox(center, center, column);
+      width: 100%;
+      gap: 3.2rem;
+
+      &:first-child {
+        border-bottom: 0px solid;
+        padding-bottom: 0;
+      }
+    }
+
+    &__item {
+      min-width: 420px;
+      margin-left: 0rem;
+      @include flexbox(flex-start, center, row);
+    }
+
+    &__content {
+      @include flexbox(flex-start, space-between, column);
+    }
+
+    &__title {
+      align-items: flex-start;
+    }
+  }
+}
